@@ -36,14 +36,18 @@ platforms=SNES NES N64 GB GBA SEGA MDRIVE PCE PSX ATARI C64
 # of the platform (which must be exactly as specified in
 # the platforms key above).
 #
-# -path: directory to scan for roms for the given platform
-# -exts: lowercase string of file extensions to look for,
-# without a dot, always lowercase and separated by a single
-# space, no trailing space. Roms will be matched by their
-# downcased extension.
+# -path: path to the directory to scan for roms for the given
+# platform, no trailing (back)slash
+# -exts: string of file extensions to look for, without
+# a dot, always lowercase and separated by a single space,
+# no trailing space. Roms will be matched by their downcased 
+# extension.
 # -cmd: the absolute path to the command to be executed.
 # The absolute path to the selected rom will be the only
 # argument to the command.
+# On Windows remember to escape the '\' character in paths
+# by doubling it, e.g.:
+# SNES-cmd=C:\\Program Files\\Mednafen\\mednafen.exe
 #
 SNES-path=/mnt/array/storage/games/snes
 SNES-exts=zip smc
@@ -104,7 +108,7 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 This will enable font anti-aliasing in all Java apps (as long as they pick up the ENV you declared this variable in, of course). You're welcome.
 
-On Windows you don't need to escape the '\' character in paths (e.g. ```snes-cmd=C:\Program Files\Mednafen\mednafen.exe``` is perfectly fine).
+On Windows you do need to escape the '\' character in paths (e.g. ```snes-cmd=C:\\Program Files\\Mednafen\\mednafen.exe```).
 
 ## Development notes
 
